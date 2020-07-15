@@ -574,23 +574,6 @@
             });
         }
 
-        // function getRawanColor(dataLongsor, kelurahan) {
-        //     var color = '';
-        //     //ini disamakan datanyaa 
-        //     $.each(dataLongsor, function(num, item) {
-        //         var kelurahanItem = item.nama_kelurahan;
-        //         // console.log(item);
-        //         if (kelurahan.toUpperCase() == kelurahanItem.toUpperCase()) {
-        //             color = getColorRiwayat(item.prone_category);
-        //             // console.log(item.riwayatlongsor_category);
-        //             return color;
-        //         }
-        //     });
-
-        //     return color;
-
-        // }
-
         function getHistoryColor(kelurahan) {
             //jadi data api dipanggil disini
             $.ajax({
@@ -608,7 +591,7 @@
             var dataLongsor = localStorage.getItem('dataLongsor');
             var dataKu = JSON.parse(dataLongsor).data;
             var color = '';
-            // console.log(dataKu);
+            console.log(dataKu);
 
             //ini disamakan datanyaa 
             $.each(dataKu, function(num, item) {
