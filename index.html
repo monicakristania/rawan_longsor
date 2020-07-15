@@ -184,22 +184,22 @@
 
 
         // fungsi ini buat get petalongsor, baik rawan maupun riwayat
-        // function getPetalongsor(tahun, handledata){
-        //     $.ajax({
-        //         type: 'GET',
-        //         url: 'http://monica.irvansyah.id/api/peta/'+tahun,
-        //         dataType: 'json',
-        //         success: function(data) {
-        //             handledata(data);
-        //         }
-        //     });
-        // }
+        function getPetalongsor(tahun, handledata){
+            $.ajax({
+                type: 'GET',
+                url: 'http://monica.irvansyah.id/api/peta/'+tahun,
+                dataType: 'json',
+                success: function(data) {
+                    handledata(data);
+                }
+            });
+        }
 
         function getHistoryColor(kelurahan) {
             //jadi data api dipanggil disini
             $.ajax({
                 type: 'GET',
-                url: "http://monica.irvansyah.id/api/peta/"+tahun,
+                url: "http://monica.irvansyah.id/api/peta/",
                 dataType: 'json',
                 success: function(data) {
                     //disimpan dilocal storage datanya agar bisa dipanggil
