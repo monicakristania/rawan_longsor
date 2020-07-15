@@ -178,7 +178,7 @@
         document.getElementById("dataid5").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor';
+                // document.getElementById('titleMode').innerText = 'Peta Rawan Longsor';
 
                 //ganti tahunnya manual disini
                 getPetalongsor("semua", function(data) {
@@ -241,7 +241,7 @@
         document.getElementById("dataid7").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2015';
+                // document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2015';
 
                 //ganti tahunnya manual disini
                 getPetalongsor("2015", function(data) {
@@ -304,7 +304,7 @@
         document.getElementById("dataid1").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2016';
+                // document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2016';
 
                 //ganti tahunnya manual disini
                 getPetalongsor("2016", function(data) {
@@ -367,7 +367,7 @@
         document.getElementById("dataid2").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2017';
+                // document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2017';
 
                 //ganti tahunnya manual disini
                 getPetalongsor("2017", function(data) {
@@ -430,7 +430,7 @@
         document.getElementById("dataid3").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2018';
+                // document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2018';
 
                 //ganti tahunnya manual disini
                 getPetalongsor("2018", function(data) {
@@ -493,7 +493,7 @@
         document.getElementById("dataid12").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2019';
+                // document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2019';
 
                 //ganti tahunnya manual disini
                 getPetalongsor("2019", function(data) {
@@ -566,7 +566,7 @@
         function getPetalongsor(tahun, handledata){
             $.ajax({
                 type: 'GET',
-                url: 'http://monica.irvansyah.id/api/peta/'+tahun,
+                url: 'http://monica.irvansyah.id/map/petalongsor/'+tahun,
                 dataType: 'json',
                 success: function(data) {
                     handledata(data);
