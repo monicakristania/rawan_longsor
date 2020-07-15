@@ -159,7 +159,7 @@
 
         //Menambahkan Layer Desa
         var me = this;
-        $.getJSON("https://monicakristania.github.io/rawan_longsor/kelurahan.json", function(data) {
+        $.getJSON( "https://monicakristania.github.io/rawan_longsor/kelurahan.json", function(data) {
 
             me.dataKelurahan = data;
 
@@ -218,7 +218,7 @@
         function getPetalongsor(tahun, handledata){
             $.ajax({
                 type: 'GET',
-                url: 'http://monica.irvansyah.id/map/petalongsor/'+tahun,
+                url: 'http://monica.irvansyah.id/api/peta/'+tahun,
                 dataType: 'json',
                 success: function(data) {
                     handledata(data);
