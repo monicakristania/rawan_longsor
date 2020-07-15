@@ -563,7 +563,7 @@
         function getPetalongsor(tahun, handledata){
             $.ajax({
                 type: 'GET',
-                url: 'http://monica.irvansyah.id/api/peta/'+tahun,
+                url: 'http://monica.irvansyah.id/map/petalongsor/'+tahun,
                 dataType: 'json',
                 success: function(data) {
                     handledata(data);
@@ -571,38 +571,37 @@
             });
         }
 
-        function getHistoryColor(kelurahan) {
-            //jadi data api dipanggil disini
-            $.ajax({
-                type: 'GET',
-                url: "http://monica.irvansyah.id/api/peta/"+tahun,
-                dataType: 'json',
-                success: function(data) {
-                    //disimpan dilocal storage datanya agar bisa dipanggil
-                    localStorage.removeItem('dataLongsor');
-                    localStorage.setItem('dataLongsor', JSON.stringify(data));
-                }
-            });
-    
-            //memanggil data localstore
-            var dataLongsor = localStorage.getItem('dataLongsor');
-            var dataKu = JSON.parse(dataLongsor).data;
+        function getHistoryColor(dataLongsor, kelurahan) { 
             var color = '';
-            // console.log(dataKu);
-
             //ini disamakan datanyaa 
-            $.each(dataKu, function(num, item) {
-                kelurahanItem = item.nama_kelurahan;
-                // console.log(desa);
-                // console.log(desaItem);
+            $.each(dataLongsor, function(num, item) {
+                var kelurahanItem = item.nama_kelurahan;
+                // console.log(item);
                 if (kelurahan.toUpperCase() == kelurahanItem.toUpperCase()) {
-                    color = item.prone_category;
-                    console.log(item.prone_category);
+                    color = getColorRiwayat(item.riwayatlongsor_category);
+                    console.log(item.riwayatlongsor_category);
+                    return color;
                 }
             });
 
             return color;
+        
 
+        //memanggil data localstore
+            var dataLongsor = localStorage.getItem('dataLongsor');
+            // console.log(JSON.parse(dataBanjir));
+            var color = '';
+            //ini disamakan datanyaa 
+            $.each(JSON.parse(dataLongsor), function(num, item) {
+                desaItem = item.title;
+                // console.log(item);
+                if (desa.toUpperCase() == desaItem.toUpperCase()) {
+                    color = item.riwayatlongsor_category;
+                    console.log(item.riwayatlongsor_category);
+                }
+            });
+
+            return color;
         }
 
         function getRawanColor(dataLongsor, kelurahan) {
