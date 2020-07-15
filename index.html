@@ -191,8 +191,8 @@
                 dataType: 'json',
                 success: function(data) {
                     //disimpan dilocal storage datanya agar bisa dipanggil
-                    localStorage.removeItem('dataLongsor');
-                    localStorage.setItem('dataLongsor', JSON.stringify(data));
+                    // localStorage.removeItem('dataLongsor');
+                    // localStorage.setItem('dataLongsor', JSON.stringify(data));
                 }
             });
 
@@ -242,7 +242,7 @@
             return color;
 
         }
-        
+
         //Menambahkan dan Menampilkan Peta Rawan Longsor
         document.getElementById("dataid5").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
