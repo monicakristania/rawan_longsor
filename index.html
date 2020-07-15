@@ -208,22 +208,22 @@
                 }
             });
     
-            //memanggil data localstore
-            var dataLongsor = localStorage.getItem('dataLongsor');
-            var dataKu = JSON.parse(dataLongsor).data;
-            var color = '';
-            // console.log(dataKu);
+            // //memanggil data localstore
+            // var dataLongsor = localStorage.getItem('dataLongsor');
+            // var dataKu = JSON.parse(dataLongsor).data;
+            // var color = '';
+            // // console.log(dataKu);
 
-            //ini disamakan datanyaa 
-            $.each(dataKu, function(num, item) {
-                kelurahanItem = item.nama_kelurahan;
-                // console.log(desa);
-                // console.log(desaItem);
-                if (kelurahan.toUpperCase() == kelurahanItem.toUpperCase()) {
-                    color = item.prone_category;
-                    console.log(item.prone_category);
-                }
-            });
+            // //ini disamakan datanyaa 
+            // $.each(dataKu, function(num, item) {
+            //     kelurahanItem = item.nama_kelurahan;
+            //     // console.log(desa);
+            //     // console.log(desaItem);
+            //     if (kelurahan.toUpperCase() == kelurahanItem.toUpperCase()) {
+            //         color = item.prone_category;
+            //         console.log(item.prone_category);
+            //     }
+            // });
 
             return color;
 
