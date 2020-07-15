@@ -574,39 +574,7 @@
             });
         }
 
-        function getHistoryColor(kelurahan) {
-            //jadi data api dipanggil disini
-            $.ajax({
-                type: 'GET',
-                url: 'http://monica.irvansyah.id/api/peta/'+tahun,
-                dataType: 'json',
-                success: function(data) {
-                    //disimpan dilocal storage datanya agar bisa dipanggil
-                    localStorage.removeItem('dataLongsor');
-                    localStorage.setItem('dataLongsor', JSON.stringify(data));
-                }
-            });
-    
-            //memanggil data localstore
-            var dataLongsor = localStorage.getItem('dataLongsor');
-            var dataKu = JSON.parse(dataLongsor).data;
-            var color = '';
-            // console.log(dataKu);
-
-            //ini disamakan datanyaa 
-            $.each(dataKu, function(num, item) {
-                kelurahanItem = item.nama_kelurahan;
-                // console.log(desa);
-                // console.log(desaItem);
-                if (kelurahan.toUpperCase() == kelurahanItem.toUpperCase()) {
-                    color = item.prone_category;
-                    console.log(item.prone_category);
-                }
-            });
-
-            return color;
-
-        }
+        
 
         function getRawanColor(dataLongsor, kelurahan) {
             var color = '';
@@ -622,9 +590,7 @@
                 });
 
             return color;
-
         }
-
 
         //Menambahkan Legend pada Peta
         var legend = L.control({
