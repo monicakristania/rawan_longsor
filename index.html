@@ -199,7 +199,7 @@
             //jadi data api dipanggil disini
             $.ajax({
                 type: 'GET',
-                url: "http://monica.irvansyah.id/api/peta/",
+                url: "http://monica.irvansyah.id/api/peta/"+tahun,
                 dataType: 'json',
                 success: function(data) {
                     //disimpan dilocal storage datanya agar bisa dipanggil
