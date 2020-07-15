@@ -100,12 +100,12 @@
                     </button>
                     <div class="dropdown-menu" style="width: 140%">
                       <!-- Riwayat Longsor -->
-                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid5" > Peta Rawan Longsor</label></div>
-                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid7" > Peta Rawan Longsor 2015</label></div>
-                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid1" > Peta Rawan Longsor 2016</label></div>
-                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid2" > Peta Rawan Longsor 2017</label></div>
-                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid3" > Peta Rawan Longsor 2018</label></div>
-                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid12" > Peta Rawan Longsor 2019</label></div>
+                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid4" > Peta Riwayat Longsor</label></div>
+                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid6" > Peta Riwayat Longsor 2015</label></div>
+                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid8" > Peta Riwayat Longsor 2016</label></div>
+                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid9" > Peta Riwayat Longsor 2017</label></div>
+                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid10" > Peta Riwayat Longsor 2018</label></div>
+                      <div class="checkbox dropdown-item"><label><input type="checkbox" id="dataid11" > Peta Riwayat Longsor 2019</label></div>
                     </div>
                 </div>
               </div>
@@ -174,18 +174,21 @@
             });
         });
 
-        //Menambahkan dan Menampilkan Peta Riwayat Longsor
-        document.getElementById("dataid4").addEventListener("change", function() {
+        //Menambahkan dan Menampilkan Peta Rawan Longsor
+        document.getElementById("dataid5").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
-                document.getElementById('titleMode').innerText = 'Peta Riwayat Longsor';
 
-                //Ambil geojson desa lamongan
+                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor';
+
+                //ganti tahunnya manual disini
                 getPetalongsor("semua", function(data) {
 
                     $.each(me.dataKelurahan.features, function(num, value) {
 
                         var kelurahan = value.properties.Kelurahan;
-                        var warna = getHistoryColor(data, kelurahan);
+
+                        //bedone ndek kene
+                        var warna = getRawanColor(data, kelurahan);
                         var riwayatlayer;
             
                         //Menghilangkan efek higlight saat mouse out
@@ -215,7 +218,7 @@
                             }
             
                         }).addTo(map);
-
+                        
                         if(warna == ''){
                             riwayatlayer.remove(map);
                         }
@@ -228,25 +231,27 @@
                         });
                     });
                 });
+                
             } else {
-                riwayatlayer.remove(map);
+                rawanLayer.remove(map);
             }
         });
 
-        //Menambahkan dan Menampilkan Peta Riwayat Longsor 2015
-        // idnya sama kan
-        document.getElementById("dataid6").addEventListener("change", function() {
+        //Menambahkan dan Menampilkan Peta Rawan Longsor 2015
+        document.getElementById("dataid7").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Riwayat Longsor 2015';
+                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2015';
 
-                //Ambil geojson desa lamongan
+                //ganti tahunnya manual disini
                 getPetalongsor("2015", function(data) {
 
                     $.each(me.dataKelurahan.features, function(num, value) {
 
                         var kelurahan = value.properties.Kelurahan;
-                        var warna = getHistoryColor(data, kelurahan);
+
+                        //bedone ndek kene
+                        var warna = getRawanColor(data, kelurahan);
                         var riwayatlayer;
             
                         //Menghilangkan efek higlight saat mouse out
@@ -276,7 +281,7 @@
                             }
             
                         }).addTo(map);
-
+                        
                         if(warna == ''){
                             riwayatlayer.remove(map);
                         }
@@ -289,25 +294,27 @@
                         });
                     });
                 });
+                
             } else {
-                riwayatlayer.remove(map);
+                rawanLayer.remove(map);
             }
         });
 
-        //Menambahkan dan Menampilkan Peta Riwayat Longsor 2016
-        // idnya sama kan
-        document.getElementById("dataid8").addEventListener("change", function() {
+        //Menambahkan dan Menampilkan Peta Rawan Longsor 2016
+        document.getElementById("dataid1").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Riwayat Longsor 2016';
+                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2016';
 
-                //Ambil geojson desa lamongan
+                //ganti tahunnya manual disini
                 getPetalongsor("2016", function(data) {
 
                     $.each(me.dataKelurahan.features, function(num, value) {
 
                         var kelurahan = value.properties.Kelurahan;
-                        var warna = getHistoryColor(data, kelurahan);
+
+                        //bedone ndek kene
+                        var warna = getRawanColor(data, kelurahan);
                         var riwayatlayer;
             
                         //Menghilangkan efek higlight saat mouse out
@@ -337,7 +344,7 @@
                             }
             
                         }).addTo(map);
-
+                        
                         if(warna == ''){
                             riwayatlayer.remove(map);
                         }
@@ -350,25 +357,27 @@
                         });
                     });
                 });
+                
             } else {
-                riwayatlayer.remove(map);
+                rawanLayer.remove(map);
             }
         });
 
-        //Menambahkan dan Menampilkan Peta Riwayat Longsor 2017
-        // idnya sama kan
-        document.getElementById("dataid9").addEventListener("change", function() {
+        //Menambahkan dan Menampilkan Peta Rawan Longsor 2017
+        document.getElementById("dataid2").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Riwayat Longsor 2017';
+                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2017';
 
-                //Ambil geojson desa lamongan
+                //ganti tahunnya manual disini
                 getPetalongsor("2017", function(data) {
 
                     $.each(me.dataKelurahan.features, function(num, value) {
 
                         var kelurahan = value.properties.Kelurahan;
-                        var warna = getHistoryColor(data, kelurahan);
+
+                        //bedone ndek kene
+                        var warna = getRawanColor(data, kelurahan);
                         var riwayatlayer;
             
                         //Menghilangkan efek higlight saat mouse out
@@ -398,7 +407,7 @@
                             }
             
                         }).addTo(map);
-
+                        
                         if(warna == ''){
                             riwayatlayer.remove(map);
                         }
@@ -411,25 +420,27 @@
                         });
                     });
                 });
+                
             } else {
-                riwayatlayer.remove(map);
+                rawanLayer.remove(map);
             }
         });
 
-        //Menambahkan dan Menampilkan Peta Riwayat Longsor 2018
-        // idnya sama kan
-        document.getElementById("dataid10").addEventListener("change", function() {
+        //Menambahkan dan Menampilkan Peta Rawan Longsor 2018
+        document.getElementById("dataid3").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Riwayat Longsor 2018';
+                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2018';
 
-                //Ambil geojson desa lamongan
+                //ganti tahunnya manual disini
                 getPetalongsor("2018", function(data) {
 
                     $.each(me.dataKelurahan.features, function(num, value) {
 
                         var kelurahan = value.properties.Kelurahan;
-                        var warna = getHistoryColor(data, kelurahan);
+
+                        //bedone ndek kene
+                        var warna = getRawanColor(data, kelurahan);
                         var riwayatlayer;
             
                         //Menghilangkan efek higlight saat mouse out
@@ -459,7 +470,7 @@
                             }
             
                         }).addTo(map);
-
+                        
                         if(warna == ''){
                             riwayatlayer.remove(map);
                         }
@@ -472,25 +483,27 @@
                         });
                     });
                 });
+                
             } else {
-                riwayatlayer.remove(map);
+                rawanLayer.remove(map);
             }
         });
 
-        //Menambahkan dan Menampilkan Peta Riwayat Longsor 2019
-        // idnya sama kan
-        document.getElementById("dataid11").addEventListener("change", function() {
+        //Menambahkan dan Menampilkan Peta Rawan Longsor 2019
+        document.getElementById("dataid12").addEventListener("change", function() {
             if (document.getElementById(this.id).checked == true) {
 
-                document.getElementById('titleMode').innerText = 'Peta Riwayat Longsor 2019';
+                document.getElementById('titleMode').innerText = 'Peta Rawan Longsor 2019';
 
-                //Ambil geojson desa lamongan
+                //ganti tahunnya manual disini
                 getPetalongsor("2019", function(data) {
 
                     $.each(me.dataKelurahan.features, function(num, value) {
 
                         var kelurahan = value.properties.Kelurahan;
-                        var warna = getHistoryColor(data, kelurahan);
+
+                        //bedone ndek kene
+                        var warna = getRawanColor(data, kelurahan);
                         var riwayatlayer;
             
                         //Menghilangkan efek higlight saat mouse out
@@ -520,7 +533,7 @@
                             }
             
                         }).addTo(map);
-
+                        
                         if(warna == ''){
                             riwayatlayer.remove(map);
                         }
@@ -533,8 +546,9 @@
                         });
                     });
                 });
+                
             } else {
-                riwayatlayer.remove(map);
+                rawanLayer.remove(map);
             }
         });
 
@@ -558,21 +572,20 @@
             });
         }
 
-        function getHistoryColor(handleData) {
-            
-            //jadi data api dipanggil disini
-            $.ajax({
-                type: 'GET',
-                url: '/map/petalongsor/'+tahun,
-                dataType: 'json',
-                success: function (data) {
-                    //disimpan dilocal storage datanya agar bisa dipanggil
-                     localStorage.removeItem('dataLongsor');
-                     localStorage.setItem('dataLongsor', JSON.stringify(data));
-                    // localStorage.setItem('dataPneumonia', JSON.stringify(data.data2018.original));
-                    // tidak perlu disimpan distorage karena tidak pernah dipanggil
+        function getRawanColor(dataLongsor, kelurahan) {
+            var color = '';
+            //ini disamakan datanyaa 
+            $.each(dataLongsor, function(num, item) {
+                var kelurahanItem = item.nama_kelurahan;
+                // console.log(item);
+                if (kelurahan.toUpperCase() == kelurahanItem.toUpperCase()) {
+                    color = getColorRiwayat(item.prone_category);
+                    // console.log(item.riwayatlongsor_category);
+                    return color;
                 }
             });
+
+            return color;   
 
         //memanggil data localstore
             var dataLongsor = localStorage.getItem('dataLongsor');
@@ -583,8 +596,8 @@
                 desaItem = item.title;
                 // console.log(item);
                 if (desa.toUpperCase() == desaItem.toUpperCase()) {
-                    color = item.riwayatlongsor_category;
-                    console.log(item.riwayatlongsor_category);
+                    color = item.prone_category;
+                    console.log(item.prone_category);
                 }
             });
 
