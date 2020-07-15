@@ -253,7 +253,6 @@
                         //bedone ndek kene
                         var warna = getRawanColor(data, kelurahan);
                         var riwayatlayer;
-                        var rawanLayer;
             
                         //Menghilangkan efek higlight saat mouse out
                         function resetHighlight(e) {
@@ -592,7 +591,7 @@
             var dataLongsor = localStorage.getItem('dataLongsor');
             var dataKu = JSON.parse(dataLongsor).data;
             var color = '';
-            console.log(dataKu);
+            // console.log(dataKu);
 
             //ini disamakan datanyaa 
             $.each(dataKu, function(num, item) {
