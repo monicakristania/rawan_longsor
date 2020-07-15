@@ -608,10 +608,10 @@
 
         }
 
-        function getRawanColor(dataLongsor, kelurahan) {
+        function getRawanColor(data, kelurahan) {
             var color = '';
             //ini disamakan datanyaa 
-                $.each(dataLongsor, function(num, item) {
+                $.each(data, function(num, item) {
                     var kelurahanItem = item.nama_kelurahan;
                     // console.log(item);
                     if (kelurahan.toUpperCase() == kelurahanItem.toUpperCase()) {
